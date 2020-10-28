@@ -1,0 +1,36 @@
+@(seq: Seq[SpecialTable], names: List[String], sort: SortBy)(implicit assetsFinder: AssetsFinder)
+
+<div id="content" class="">
+  <table class="table is-hoverable is-bordered is-narrow is-fullwidth" id="secTable">
+    <thead>
+      @for(col <- names){ @if(sort.by.contains("d_" + col)) { <th class="has-background-warning has-text-grey-darker"
+        role="columnheader">
+        ▼@col
+        </th>
+        } else { @if(sort.by.contains(col)) {
+        <th class="has-background-warning has-text-grey-darker" role="columnheader">
+          ▲@col
+        </th>
+        } else {
+        <th class="" role="columnheader">
+          @col
+        </th>
+        }}
+        }
+    </thead>
+    <tbody>
+      @for(sec <- seq) { <tr>
+        <td>@sec.secid</td>
+        <td>@sec.regnumber</td>
+        <td>@sec.name</td>
+        <td>@sec.emitent_title</td>
+        <td>@sec.tradedate</td>
+        <td>@sec.numtrades</td>
+        <td>@sec.open</td>
+        <td>@sec.close</td>
+        </tr>
+        }
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,63 @@
+@(sortForm: Form[SortBy])(implicit provider: MessagesProvider, assetsFinder: AssetsFinder)
+
+
+<link rel='stylesheet' href="@assetsFinder.path("js/bundle.css")">
+<script defer src="@assetsFinder.path("js/bundle.js")"></script>
+
+@helper.form(action = routes.AppController.getSort()) {
+<div class="columns">
+  <div class="column is-6">
+    <div class="notification"><p class="title is-4">Сортировка, фильтрация</p>
+    <div id="multiselect" class=""></div>
+    <div class="">
+      <dl id="emitent_filter_field">
+        <dd>
+          <input class="input is-link" type="text" id="emitent_filter" name="emitent_filter" value=""
+          placeholder="Фильтровать emitent_title"/>
+        </dd>
+      </dl>
+    </div>
+    <div class="field has-addons">
+
+        <dl id="tradedate_from_field">
+          <dd>
+            <input class="input is-dark" onfocus="(this.type='date')" onblur="(this.type='text')" id="tradedate_from" name="tradedate_from" min="1991-01-01" value=""
+              placeholder="Дата от" />
+          </dd>
+        </dl>
+  
+  
+      <dl id="tradedate_to_field">
+        <dd>
+        <input class="input is-dark" onfocus="(this.type='date')" onblur="(this.type='text')" id="tradedate_to" name="tradedate_to" min="1991-01-01" value=""
+            placeholder="Дата до" />
+        </dd>
+      </dl>
+
+    </div>
+    <div class="">
+    <button class="button is-link" type="submit">Отправить</button>
+  </div>
+</div>
+  </div>
+
+}
+
+@helper.form(action = routes.AppController.upload(), Symbol("enctype") -> "multipart/form-data") {
+  
+  <div class="column is-info">
+    <div class="notification"> <p class="title is-4">Импорт</p>  
+    <div id="file-js-example" class="file has-name is-dark">
+            <label class="file-label">
+              <input class="file-input" type="file" name="xml"  id="upload" accept=".xml">
+              <span class="file-cta">
+                Загрузить xml файл...
+              </span>
+                <input type="submit" class="button file-name is-primary" value="Отправить">
+            </label>
+    </div>
+  </div>
+  </div>
+}
+</div>
+

@@ -1,0 +1,46 @@
+@(sortForm: Form[SortBy])(content: Html)(implicit assetsFinder: AssetsFinder, provider: MessagesProvider)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" media="screen" href="@assetsFinder.path("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/ico" href="@assetsFinder.path("images/favicon.ico")">
+    </head>
+    <body>
+      <nav class="navbar has-background-black-ter">
+            <div class="navbar-brand level m-0 mx-4 mt-4">
+              <span class="title is-3 is-unselectable has-text-grey-lighter"><img src="@assetsFinder.path("images/icon-big.png")" alt="coin"
+                  class="inline image is-32x32 level-item is-unselectable ">MOEX-INFO</span>
+            </div>
+            <div class="navbar-item" id="collapse"></div>
+            <div class="navbar-end">
+              <p class="button is-dark" id="collapse1" onclick="collapse()">Интерфейс</p>
+            </div>
+      </nav>
+        <section class="hero" id="collapse2" style="display: none;">
+        <div class="hero-body">
+        @multiselect(sortForm)
+        </div>
+        </section>
+        @content
+    </body>
+    <script>
+        const fileInput = document.querySelector('#file-js-example input[type=file]');
+        fileInput.onchange = () => {
+          if (fileInput.files.length > 0) {
+            const fileName = document.querySelector('#file-js-example .file-cta');
+            fileName.textContent = fileInput.files[0].name;
+          }
+        }
+
+        const content = document 
+            .querySelector("#collapse2");
+        function collapse() {
+            if (content.style.display === "none") {
+                content.style.display = "flex"; 
+            } else { 
+                content.style.display = "none"; 
+            } 
+        }; 
+      </script>
+</html>

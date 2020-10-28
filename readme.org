@@ -1,0 +1,27 @@
+#+ATTR_HTML: :style margin-left: auto; margin-right: auto;
+[[moex-info.png]]
+
+* Moex-info
+
+Тестовый проект для компании TOT-Systems.
+
+MVC приложение с клиентской стороной и базовыми CRUD операциями по данным с биржи MOEX.
+
+* Стэк
+Backend: Play\Slick\Postgresql
+Frotnend: Twirl\Svelte\Bulma
+Helpers: Magnolia
+
+** Реализована форма для формирования поискового SQL-запроса через сайт
++ Сортировка по каждому из полей
++ Фильтрация по emitent-title
++ Фильтрация по дате торгов
+
+** Api.
+    a. list - прочитать все данные
+    b. create - создать таблицу в базе
+    c. deleteAll - удалить все данные
+    d. update - записать одну единицу
+       * Для ценных бумаг название фильтуется - только кириллица и цифры.
+    e. updateBatch - записать много данных
+    f. importXml - запись данных из xml

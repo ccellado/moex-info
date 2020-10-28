@@ -1,0 +1,8 @@
+@(seq: Seq[SpecialTable], names: List[String], sortForm: Form[SortBy], sort: SortBy)(implicit assetsFinder: AssetsFinder, provider: MessagesProvider)
+
+
+@main(sortForm) {
+
+    @table(seq, names, sort)
+
+}
