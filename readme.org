@@ -26,11 +26,15 @@ posgtresql, sass, sbt, npm
 Запустить psql сервер, пользователь\пароль\адрес прописать в conf\application.conf
 
 В корневой папке проекта запустить:
-#+begin_src
+#+begin_src shell
     sbt run
 #+end_src
 
 * API
+#+begin_src scala
+Securities.Api
+SecuritiesHistory.Api
+#+end_src
     1. list - прочитать все данные
     2. create - создать таблицу в базе
     3. deleteAll - удалить все данные
