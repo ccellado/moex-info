@@ -7,14 +7,16 @@
 
 MVC приложение с клиентской стороной и базовыми CRUD операциями по данным с биржи MOEX.
 
-** Реализована форма для формирования поискового SQL-запроса через сайт
+**** Реализована форма для формирования поискового SQL-запроса через сайт
 - Сортировка по каждому из полей
 - Фильтрация по emitent-title
 - Фильтрация по дате торгов
 
 * Стэк
-Backend: [https://www.playframework.com/][Play]] \ Slick \ Postgresql
+Backend: Play \ Slick \ Postgresql
+
 Frotnend: Twirl \ Svelte \ Bulma
+
 Helpers: Magnolia
 
 * Требования
@@ -22,7 +24,8 @@ posgtresql, sass, sbt, npm
 
 * Установка
 Запустить psql сервер, пользователь\пароль\адрес прописать в conf\application.conf
-В корневой папке проекта запустить
+
+В корневой папке проекта запустить:
 #+begin_src
     sbt run
 #+end_src
