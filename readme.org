@@ -38,3 +38,10 @@ posgtresql, sass, sbt, npm
         Для ценных бумаг название фильтуется - только кириллица и цифры.
     5. updateBatch - записать много данных
     6. importXml - запись данных из xml
+
+* REST (json)
+**** /securities - все ценные бумаги
+
+**** /securitiesHistory - вся история торгов
+
+**** /specialTable - все данные как на главной странице
