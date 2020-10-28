@@ -13,9 +13,9 @@ MVC приложение с клиентской стороной и базов�
 - Фильтрация по дате торгов
 
 * Стэк
-**** Backend: Play\Slick\Postgresql
-**** Frotnend: Twirl\Svelte\Bulma
-**** Helpers: Magnolia
+Backend: [https://www.playframework.com/][Play]] \ Slick \ Postgresql
+Frotnend: Twirl \ Svelte \ Bulma
+Helpers: Magnolia
 
 * Требования
 posgtresql, sass, sbt, npm
@@ -23,11 +23,11 @@ posgtresql, sass, sbt, npm
 * Установка
 Запустить psql сервер, пользователь\пароль\адрес прописать в conf\application.conf
 В корневой папке проекта запустить
-...
-sbt run
-...
+#+begin_src
+    sbt run
+#+end_src
 
-* Api.
+* API
     1. list - прочитать все данные
     2. create - создать таблицу в базе
     3. deleteAll - удалить все данные
